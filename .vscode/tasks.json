@@ -1,0 +1,69 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Debug in SketchUp 2018",
+      "type": "shell",
+      "command": "skippy",
+      "args": [
+        "sketchup:debug",
+        "2018"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Install C Extension",
+      "type": "shell",
+      "command": "xcopy",
+      "args": [
+        "${workspaceFolder}\\cext\\bin\\traceup.so",
+        "${workspaceFolder}\\src\\tt_traceup\\cext\\stage\\2.5\\"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "msvc build",
+      "type": "shell",
+      "command": "cl.exe",
+      "args": [
+        "/EHsc",
+        "/Zi",
+        "/LD",
+
+        "/Focext/bin/",
+        "/Fdcext/bin/vc.pdb",
+
+        "/Fe:",
+        "traceup.so",
+
+        "/I",
+        "${workspaceFolder}/cext",
+        "/I",
+        "${workspaceFolder}/../ruby-c-extension-examples/ThirdParty/include/ruby/2.5/win32_x64",
+        "/I",
+        "${workspaceFolder}/../../SLAPI/SDK_WIN_x64_2019-2-222/headers",
+
+        "sketchup.lib",
+        "x64-msvcrt-ruby250.lib",
+        "cext/traceup.cpp",
+        "cext/ruby/utilities.cpp",
+
+        "/link",
+        "/LIBPATH:${workspaceFolder}/../ruby-c-extension-examples/ThirdParty/lib/win32",
+        "/LIBPATH:${workspaceFolder}/../../SLAPI/SDK_WIN_x64_2019-2-222/binaries/sketchup/x64",
+        "/OUT:cext/bin/traceup.so",
+        "/PDB:cext/bin/traceup.pdb"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

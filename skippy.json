@@ -1,0 +1,19 @@
+{
+  "name": "Deep Picker",
+  "description": "",
+  "namespace": "TT::Plugins::DeepPick",
+  "basename": "tt_traceup",
+  "author": "Unknown",
+  "copyright": "Copyright (c) 2019",
+  "license": "None",
+  "sources": [
+    "github.com",
+    "bitbucket.org"
+  ],
+  "libraries": [
+
+  ],
+  "modules": [
+
+  ]
+}

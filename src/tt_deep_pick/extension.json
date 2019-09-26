@@ -1,0 +1,10 @@
+{
+  "name": "Deep Pick",
+  "description": "",
+  "creator": "Thomas Thomassen",
+  "copyright": "Copyright (c) 2019",
+  "license": "MIT",
+  "product_id": "TT_DeepPick",
+  "version": "0.1.0",
+  "build": "1"
+}

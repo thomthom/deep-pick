@@ -1,0 +1,13 @@
+# Backup files
+*.skb
+
+# Other files
+media/plan01-tracemap.png
+
+# CExt files
+src/tt_traceup/**/*.so
+src/tt_traceup/**/*.bundle
+# TODO: Make all these files generate in the same directory. Not in the project
+# root.
+*.exp
+*.lib
