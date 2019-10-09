@@ -2,11 +2,28 @@ require 'sketchup.rb'
 
 module TT::Plugins::DeepPick
 
+  ICON_PATH = File.join(__dir__, 'icons').freeze
+  ICON_EXT = Sketchup.platform == :platform_win ? 'svg' : 'pdf'
+
+  # @param [String] basename
+  # @return [String]
+  def self.icon(basename)
+    File.join(ICON_PATH, "#{basename}.#{ICON_EXT}")
+  end
+
+  # @param [UI::Command]
+  # @param [String] basename
+  def self.set_icon(command, basename)
+    command.small_icon = self.icon(basename)
+    command.large_icon = self.icon(basename)
+  end
+
   unless file_loaded?(__FILE__)
     cmd_deep_pick_tool = UI::Command.new('Deep Pick') {
       self.deep_pick_tool
     }.tap { |cmd|
       cmd.tooltip = 'Deep Pick'
+      self.set_icon(cmd, 'deep-pick')
     }
 
     menu = UI.menu('Tools')
