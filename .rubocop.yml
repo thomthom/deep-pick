@@ -5,8 +5,10 @@ AllCops:
   DisplayStyleGuide: true
   ExtraDetails: true
   SketchUp:
+    Exclude:
+      - skippy/**/*
     SourcePath: src
-    TargetSketchUpVersion: 2018
+    TargetSketchUpVersion: 2020
 
 SketchupDeprecations:
   Enabled: true

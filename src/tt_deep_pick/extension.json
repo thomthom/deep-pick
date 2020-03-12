@@ -2,9 +2,9 @@
   "name": "Deep Pick",
   "description": "",
   "creator": "Thomas Thomassen",
-  "copyright": "Copyright (c) 2019",
+  "copyright": "Copyright (c) 2019-2020",
   "license": "MIT",
   "product_id": "TT_DeepPick",
-  "version": "0.1.0",
-  "build": "1"
+  "version": "1.0.0",
+  "build": "0"
 }

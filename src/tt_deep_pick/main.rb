@@ -2,7 +2,7 @@ require 'sketchup.rb'
 
 module TT::Plugins::DeepPick
 
-  ICON_PATH = File.join(__dir__, 'icons').freeze
+  ICON_PATH = File.join(PATH, 'icons').freeze
   ICON_EXT = Sketchup.platform == :platform_win ? 'svg' : 'pdf'
 
   # @param [String] basename
@@ -51,9 +51,9 @@ module TT::Plugins::DeepPick
       ph = view.pick_helper(x, y)
       active_path = view.model.active_path || []
       path = ph.path_at(0)
-      puts 'onLButtonDown'
-      p view.model.active_path
-      p path
+      # puts 'onLButtonDown'
+      # p view.model.active_path
+      # p path
       if view.model.active_path
         if path
           path = view.model.active_path + path
